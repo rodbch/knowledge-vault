@@ -53,7 +53,7 @@ function Login({ appName }) {
   
   return (
     <>
-      <section id="center">
+      <div id="center">
         <h1>{appName}</h1>
         <input 
           type='email'
@@ -74,7 +74,7 @@ function Login({ appName }) {
         {loading && <p>Loading...</p>}
         {error && <p>{String(error)}</p>}
         {user && <p>Signed in as: {user.email ?? user.id}</p>}
-      </section>
+      </div>
     </>
   )
 }
