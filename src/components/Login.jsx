@@ -2,7 +2,7 @@ import './Login.css'
 import * as auth from '../services/auth'
 import { useState } from 'react'
 
-function Login({ appName }) {
+function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
@@ -54,7 +54,6 @@ function Login({ appName }) {
   return (
     <>
       <div id="center">
-        <h1>{appName}</h1>
         <input 
           type='email'
           value={email}
