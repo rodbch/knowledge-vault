@@ -41,7 +41,7 @@ function Login() {
     setLoading(true)
     setError(null)
     try {
-      const res = await auth.resetPassword(email)
+      const res = await auth.resetPassword(email, `${window.location.origin}/reset-password`)
       if (res.error) setError(res.error.message ?? res.error)
       else setError('Password reset email sent.')
     } catch (e) {
@@ -54,13 +54,17 @@ function Login() {
   return (
     <>
       <div id="center">
-        <input 
+        <label htmlFor="email">Email</label>
+        <input
+          id="email"
           type='email'
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder='Email'
         />
-        <input 
+        <label htmlFor="password">Password</label>
+        <input
+          id="password"
           type='password'
           value={password}
           onChange={e => setPassword(e.target.value)}

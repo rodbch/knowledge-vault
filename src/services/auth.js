@@ -14,8 +14,12 @@ export async function signIn(email, password) {
   });
 }
 
-export async function resetPassword(email) {
-  return supabase.auth.resetPasswordForEmail(email) 
+export async function resetPassword(email, redirectTo) {
+  return supabase.auth.resetPasswordForEmail(email, { redirectTo })
+}
+
+export async function updatePassword(password) {
+  return supabase.auth.updateUser({ password })
 }
 
 export async function getSession() {
